@@ -11,6 +11,13 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <!-- ADICIONADO: biblioteca de gestos (detector + handler) -->
     <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden
+        }
+    </style>
+
 </head>
 
 <body style="margin:0; overflow:hidden;">
@@ -22,7 +29,6 @@
         <a-marker preset="hiro">
             <!-- Modelo GLB animado -->
             <a-entity class="tocavel" gesture-handler gltf-model="url(Globo.glb)" scale="2.5 2.5 2.5" position="0 0 0"
-              
                 animation__grow="property: scale; to: 3 3 3; dur:120; startEvents: mousedown"
                 animation__shrink="property: scale; to: 2.5 2.5 2.5; dur:120; startEvents: mouseup"></a-entity>
             <!-- Luz ambiente suave -->
