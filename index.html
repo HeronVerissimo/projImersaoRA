@@ -17,13 +17,15 @@
     <!-- Cena RA embutida que usa a webcam -->
     <a-scene embedded arjs="sourceType: webcam;" gesture-detector>
         <!-- Câmera controlada pelo AR.js -->
-        <a-entity camera></a-entity>
+        <a-entity camera cursor="rayOrigin: mouse; fuse:false" raycaster="objects: .tocavel"></a-entity>
         <!-- Marcador Hiro padrão -->
         <a-marker preset="hiro">
             <!-- Modelo GLB animado -->
-            <a-entity gltf-model="url(Globo.glb)" scale="2.5 2.5 2.5" position="0 0 0" gesture-handler
+            <a-entity class="tocavel" gesture-handler gltf-model="url(Globo.glb)" scale="2.5 2.5 2.5" position="0 0 0"
                 animation-mixer="clip:*; loop: pingpong;"
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"></a-entity>
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
+                animation__grow="property: scale; to: 3 3 3; dur:120; startEvents: mousedown"
+                animation__shrink="property: scale; to: 2.5 2.5 2.5; dur:120; startEvents: mouseup"></a-entity>
             <!-- Luz ambiente suave -->
             <a-light type="ambient" color="#FFF"></a-light>
             <!-- Luz direcional para realçar o modelo -->
