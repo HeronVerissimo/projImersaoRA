@@ -29,6 +29,8 @@
         <a-marker preset="hiro">
             <!-- Modelo GLB animado -->
             <a-entity class="tocavel" gesture-handler gltf-model="url(Globo.glb)" scale="2.5 2.5 2.5" position="0 0 0"
+                animation-mixer="clip:*; loop: pingpong;"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"
                 animation__grow="property: scale; to: 3 3 3; dur:120; startEvents: mousedown"
                 animation__shrink="property: scale; to: 2.5 2.5 2.5; dur:120; startEvents: mouseup"></a-entity>
             <!-- Luz ambiente suave -->
