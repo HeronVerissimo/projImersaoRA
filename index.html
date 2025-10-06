@@ -9,17 +9,19 @@
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
     <!-- AR.js para A-Frame (rastreamento marker-based) -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!-- ADICIONADO: biblioteca de gestos (detector + handler) -->
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
 </head>
 
 <body style="margin:0; overflow:hidden;">
     <!-- Cena RA embutida que usa a webcam -->
-    <a-scene embedded arjs="sourceType: webcam;">
+    <a-scene embedded arjs="sourceType: webcam;" gesture-detector>
         <!-- Câmera controlada pelo AR.js -->
         <a-entity camera></a-entity>
         <!-- Marcador Hiro padrão -->
         <a-marker preset="hiro">
             <!-- Modelo GLB animado -->
-            <a-entity gltf-model="url(Globo.glb)" scale="2.5 2.5 2.5" position="0 0 0"
+            <a-entity gltf-model="url(Globo.glb)" scale="2.5 2.5 2.5" position="0 0 0" gesture-handler
                 animation-mixer="clip:*; loop: pingpong;"
                 animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;"></a-entity>
             <!-- Luz ambiente suave -->
